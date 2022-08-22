@@ -1,0 +1,52 @@
+service: micro-services
+frameworkVersion: "3"
+useDotenv: true
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-west-1
+  stage: dev
+  environment:
+    DATABASE_URL: "mongodb://localhost:27017/projectDB"
+    JWT_SECRET: "secretSuperSecret"
+functions:
+  sum:
+    handler: operations.sum
+    events:
+      - httpApi:
+          path: /sum
+          method: post
+  rest:
+    handler: operations.rest
+    events:
+      - httpApi:
+          path: /rest
+          method: post
+  divide:
+    handler: operations.divide
+    events:
+      - httpApi:
+          path: /divide
+          method: post
+  multiply:
+    handler: operations.multiply
+    events:
+      - httpApi:
+          path: /multiply
+          method: post
+  squareRoot:
+    handler: operations.squareRoot
+    events:
+      - httpApi:
+          path: /square-root
+          method: post
+  randomString:
+    handler: operations.randomString
+    events:
+      - httpApi:
+          path: /random-string
+          method: get
+    environment:
+      RANDOM_ORG_URL: https://www.random.org/strings/?num=1&len=20&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new
+plugins:
+  - serverless-offline

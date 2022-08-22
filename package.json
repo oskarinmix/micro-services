@@ -1,0 +1,21 @@
+{
+  "name": "micro-services",
+  "version": "1.0.0",
+  "dependencies": {
+    "@middy/core": "^3.2.0",
+    "@middy/http-json-body-parser": "^3.2.0",
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "serverless-offline": "^9.2.5"
+  },
+  "scripts": {
+    "offline": "serverless offline --httpPort 5000",
+    "deploy": "serverless deploy --verbose"
+  }
+}
