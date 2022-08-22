@@ -1,5 +1,5 @@
 
-# Serverless Framework Node HTTP API on AWS
+# Micro Services in AWS for operations
 
 This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.
 
@@ -60,4 +60,15 @@ After installation, you can start local emulation with:
 serverless offline
 ```
 
-To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
+Live Server at 
+
+```
+ https://5rvldsrbg6.execute-api.us-west-1.amazonaws.com/
+```
+###endpoints 
+- POST /sum
+- POST /multiply
+- POST /rest
+- POST /divide
+- POST /square-root
+- GET /random-string
